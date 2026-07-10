@@ -1,7 +1,7 @@
 import { AppShell, Burger, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
-
+import Sidebar from "@/components/navigation/Sidebar";
 
 export default function MainLayout() {
   const [opened, { toggle }] = useDisclosure();
@@ -19,12 +19,12 @@ export default function MainLayout() {
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Text fw={700}>Tekad Inframon</Text>
+          {import.meta.env.VITE_APP_NAME}
         </Group>
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
-        <Text fw={600}>Dashboard</Text>
+        <Sidebar />
       </AppShell.Navbar>
 
       <AppShell.Main>
