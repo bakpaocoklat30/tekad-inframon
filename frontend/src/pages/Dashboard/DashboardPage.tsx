@@ -24,8 +24,9 @@ export default function DashboardPage() {
 
   return (
     <Stack>
-      <Title order={2}>Welcome to Tekad Inframon</Title>
-
+      <Title order={2}>
+        Welcome to {import.meta.env.VITE_APP_NAME}
+      </Title>
       <Card withBorder shadow="sm" radius="md">
         <Text fw={600}>Backend Status</Text>
 
@@ -40,7 +41,7 @@ export default function DashboardPage() {
 
       <Card withBorder shadow="sm" radius="md">
         <Text fw={600}>Version</Text>
-        <Text>0.1.0</Text>
+        <Text>{import.meta.env.VITE_APP_VERSION}</Text>
       </Card>
     </Stack>
   );
